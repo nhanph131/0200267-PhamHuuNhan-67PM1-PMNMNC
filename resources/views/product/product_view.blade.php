@@ -27,7 +27,7 @@
     $products = [
         1 => [
             'id' => '123',
-            'name' => 'iPhone 15',
+            'name' => 'iPhone 15', 
             'price' => 25000000,
             'quantity' => 10,
             'description' => 'Điện thoại Apple',

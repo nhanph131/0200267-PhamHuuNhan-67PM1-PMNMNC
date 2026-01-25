@@ -6,8 +6,15 @@
     <title>Document</title>
 </head>
 <body>
+    
     <h1>Trang chủ</h1>
     <h2>Chọn page:</h2>
+    @if (!session('logged_in'))
+    <div><a href="{{ route('auth.login') }}">Đăng nhập</a></div>
+    <div><a href="{{ route('auth.register') }}">Đăng kí</a></div><br>
+    @else
+    <div><a href="{{ route('auth.logout') }}">Đăng xuất</a></div><br>
+    @endif
     <div><a href="{{ route('product.index') }}">Danh sách product</a></div>
     <div><a href="{{ route('product.add') }}">Trang thêm sản phẩm</a> <br></div>
     <div><a href="{{ route('product.show', '123') }}">Xem sản phẩm mặc định</a></div>

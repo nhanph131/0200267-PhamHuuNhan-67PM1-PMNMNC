@@ -20,35 +20,10 @@
 </head>
 <body>
 <a href="{{ route('home') }}">Về trang chủ</a> <br>
-<h2>Danh sách sản phẩm</h2>
+<h2>{{ $title }}</h2>
 
 @php
-    $products = [
-        1 => [
-            'id' => '123',
-            'name' => 'iPhone 15',
-            'price' => 25000000,
-            'quantity' => 10,
-            'description' => 'Điện thoại Apple',
-            'image' => 'storage/products/iphone.jpg'
-        ],
-        2 => [
-            'id' => '124',
-            'name' => 'Samsung S24',
-            'price' => 22000000,
-            'quantity' => 5,
-            'description' => 'Điện thoại Samsung',
-            'image' => 'storage/products/samsung.jpg'
-        ],
-        3 => [
-            'id' => '125',
-            'name' => 'Xiaomi 14',
-            'price' => 18000000,
-            'quantity' => 8,
-            'description' => 'Điện thoại Xiaomi',
-            'image' => 'storage/products/sony.jpg'
-        ],
-    ];
+    $products = $p_list
 @endphp
 
 <table>
