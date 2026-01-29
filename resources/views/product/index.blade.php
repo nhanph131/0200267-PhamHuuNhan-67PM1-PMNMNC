@@ -45,7 +45,7 @@
                     <img src="{{ asset($product['image']) }}" alt="{{ $product['name'] }}">
                 </td>
                 <td>{{ number_format($product['price']) }}</td>
-                <td>{{ $product['quantity'] }}</td>
+                <!-- <td>{{ $product['quantity'] }}</td> -->
             </tr>
         @endforeach
     </tbody>

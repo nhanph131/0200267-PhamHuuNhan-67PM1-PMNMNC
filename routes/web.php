@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\CheckTimeAccess;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,7 +29,7 @@ Route::get('/sinhvien/{name?}/{mssv?}', function ($name = null, $mssv = null) {
     if ($mssv === null) {
         $mssv = '123456';
     }
-
+ 
     return view('sinhvien.index', [
         'name' => $name,
         'mssv' => $mssv
@@ -38,7 +39,7 @@ Route::get('/sinhvien/{name?}/{mssv?}', function ($name = null, $mssv = null) {
 
 Route::prefix('product')->group(function () {
 
-    Route::get('/', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/', [ProductController::class, 'index'])->name('product.index')->middleware([CheckTimeAccess::class]);
 
     Route::get('/add', function () {
         return view('product.add');

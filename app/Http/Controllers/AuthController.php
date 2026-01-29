@@ -38,6 +38,10 @@ class AuthController extends Controller
 
     public function adduser(Request $request){
         //lưu db?
-         return redirect()->route('home');
+        if ($request->username === 'Nhanph' && $request->password === "123" && $request->password === $request->repassword)
+            return "Đăng kí thành công";
+        else return "Đăng kí thất bại";
+
+        // return redirect()->route('home');
     }
 }
