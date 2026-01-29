@@ -22,5 +22,9 @@
     <div><a href="{{ route('sinhvien.info') }}">Xem thông tin sinh viên mặc định</a> <br></div>
     <div><a href="{{ route('sinhvien.info', ['Pham Huu Nhan', '0200267']) }}">Xem thông tin sinh viên real</a></div>
     <a href="{{ route('banco', 7) }}">Bàn cờ n=7</a> <br>
+    
+    <div><a href="{{ route('age') }}">Cung cấp tuổi</a></div>
+    <br>
+    <div>Tuổi hiện tại: {{ session('age') }}</div>
 </body>
 </html>

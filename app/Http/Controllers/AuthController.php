@@ -27,7 +27,8 @@ class AuthController extends Controller
     public function logout(){
          session([
                 'logged_in' => false,
-                'username'  => null
+                'username'  => null,
+                'age' => null
         ]);
         return redirect()->route('home');
     }
@@ -43,5 +44,13 @@ class AuthController extends Controller
         else return "Đăng kí thất bại";
 
         // return redirect()->route('home');
+    }
+
+    public function saveAge(Request $req){
+        session([
+            'age' => $req->input('age')
+        ]);
+
+        return redirect()->route('home');
     }
 }
